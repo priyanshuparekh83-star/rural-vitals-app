@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 20% 99%;
+    --foreground: 200 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    --primary: 168 80% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 15% 95%;
+    --secondary-foreground: 200 25% 25%;
+
+    --muted: 180 10% 94%;
+    --muted-foreground: 200 15% 45%;
+
+    --accent: 168 60% 92%;
+    --accent-foreground: 168 80% 28%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --heart: 350 80% 55%;
+    --heart-glow: 350 80% 65%;
+
+    --breath: 200 80% 55%;
+    --breath-glow: 200 80% 65%;
+
+    --stress-low: 152 70% 45%;
+    --stress-medium: 38 92% 50%;
+    --stress-high: 0 72% 55%;
+
+    --border: 180 15% 90%;
+    --input: 180 15% 90%;
+    --ring: 168 80% 38%;
+
+    --radius: 1rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(168 80% 38%) 0%, hsl(180 70% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(180 20% 98%) 100%);
+    --gradient-heart: linear-gradient(135deg, hsl(350 80% 55%) 0%, hsl(340 75% 60%) 100%);
+    --gradient-breath: linear-gradient(135deg, hsl(200 80% 55%) 0%, hsl(190 75% 50%) 100%);
+    --gradient-stress: linear-gradient(135deg, hsl(152 70% 45%) 0%, hsl(168 80% 38%) 100%);
+    --gradient-bg: linear-gradient(180deg, hsl(180 20% 99%) 0%, hsl(180 25% 96%) 100%);
+
+    --shadow-sm: 0 2px 8px -2px hsl(200 25% 15% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(200 25% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -16px hsl(200 25% 15% / 0.15);
+    --shadow-glow: 0 0 40px hsl(168 80% 38% / 0.25);
+    --shadow-heart: 0 0 30px hsl(350 80% 55% / 0.4);
+    --shadow-breath: 0 0 30px hsl(200 80% 55% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 25% 8%;
+    --foreground: 180 15% 95%;
+
+    --card: 200 20% 12%;
+    --card-foreground: 180 15% 95%;
+
+    --popover: 200 20% 12%;
+    --popover-foreground: 180 15% 95%;
+
+    --primary: 168 70% 50%;
+    --primary-foreground: 200 25% 8%;
+
+    --secondary: 200 15% 18%;
+    --secondary-foreground: 180 15% 90%;
+
+    --muted: 200 15% 20%;
+    --muted-foreground: 180 10% 60%;
+
+    --accent: 168 50% 20%;
+    --accent-foreground: 168 70% 70%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 20%;
+    --input: 200 15% 20%;
+    --ring: 168 70% 50%;
+
+    --gradient-bg: linear-gradient(180deg, hsl(200 25% 8%) 0%, hsl(200 20% 10%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(200 20% 12%) 0%, hsl(200 18% 10%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-heart {
+    background: var(--gradient-heart);
+  }
+
+  .bg-gradient-breath {
+    background: var(--gradient-breath);
+  }
+
+  .bg-gradient-stress {
+    background: var(--gradient-stress);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-heart {
+    box-shadow: var(--shadow-heart);
+  }
+
+  .shadow-breath {
+    box-shadow: var(--shadow-breath);
+  }
+
+  .glass {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-dark {
+    background: hsl(200 20% 12% / 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+/* Pulse animation for heart rate */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
